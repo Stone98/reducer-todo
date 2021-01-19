@@ -1,11 +1,16 @@
 import React from 'react';
 
 class TodoForm extends React.Component {
+    handleSubmit = (e) => {
+        e.preventDefault();
+        this.props.handleAddTodo('new todo')
+    }
+
     render() {
         return (
             <div className="todoForm">
-                <form>
-                    <label htmlFor="">
+                <form onSubmit={this.handleSubmit}>
+                    <label>
                         Title:
                         <input type="text" />
                     </label>
